@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:id="http://www.tibco.com/ws/2013/11/identity" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:sca_ext="http://www.tibco.com/ns/sca/201311" xmlns:sslserver="http://xsd.tns.tibco.com/bw/sharedresource/trinity/models/sslserver" xmi:id="_ttgwVOy0Eeiu_v3zrPmPbQ" name="sslrestservice.Resource" type="httpconnector:HttpConnectorConfiguration">
+  <identitySet xmi:id="_XpMgYOy7Eeiu_v3zrPmPbQ" appliesTo="namedResource" name="HttpClientIdentitySet" provides="confidentiality">
+    <sca_ext:intentMap xmi:id="_XpMgYey7Eeiu_v3zrPmPbQ" provides="sca_ext:confidentiality">
+      <sca_ext:qualifier xmi:id="_XpMgYuy7Eeiu_v3zrPmPbQ" name="transport">
+        <id:IdentityReference xmi:id="_XpNHcOy7Eeiu_v3zrPmPbQ" URI="sslrestservice.SSLServerResource" type="sslserver:SSLServerConfiguration"/>
+      </sca_ext:qualifier>
+    </sca_ext:intentMap>
+  </identitySet>
+  <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_ttgwVey0Eeiu_v3zrPmPbQ" useSSL="true">
+    <substitutionBindings xmi:id="_ttgwVuy0Eeiu_v3zrPmPbQ" template="host" propName="host"/>
+    <substitutionBindings xmi:id="_J56s8Oy7Eeiu_v3zrPmPbQ" template="port" propName="port"/>
+  </jndi:configuration>
+</jndi:namedResource>

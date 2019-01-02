@@ -1,0 +1,56 @@
+<process-dir height="412" id="sslrestservice.RestServiceProcess" name="sslrestservice.RestServiceProcess" type="process" width="710" x="140" y="20">
+<partnerLinks>
+<partner-link id="resource" myRole="use" name="resource" partnerLinkType="partnerLinkType" partnerType="bw.rest"/>
+<partner-link id="SubProcess" name="SubProcess" partnerLinkType="partnerLinkType1" partnerRole="use"/>
+</partnerLinks>
+<ProcessInfo createdBy="capiot" createdOn="Tue Nov 20 16:37:41 IST 2018" description="" modifiedBy="" modifiedOn="" modifiers="public" productVersion="6.5.0 V63 2018-08-08" scalable="false" singleton="true" stateless="true" type="IT"/>
+<pick collapse="false" createInstance="true" height="303" id="8f258d41-cad5-4596-bda6-f23c592f19c0" name="pick" type="pick" width="558" x="76" y="44">
+<on-message height="141" id="e4c2213b-9a4b-48ce-8ebd-bcae775d75ae" input="true" operation="post" output="true" partner-link="resource" portType="resource" type="onMessage" variable="post" width="540" x="9" y="11">
+<activity-dir height="16" id="7039204c-f452-43fa-94a6-ead3ae87503f" name="OnMessageStart" type="onMessageStart" width="16" x="-19" y="63"/>
+<link-dir id="df5bbc17-bdbb-477d-8d80-53325918d532" label="" linkType="SUCCESS" name="postOutToLog1" points="[[357,58],[410,58]]" source="8d8c497e-0778-4716-ac57-e9ed6cd164d7" target="ef3bd541-37a5-4140-888d-4b56f4fd9446"/>
+<activity-dir height="48" id="8d8c497e-0778-4716-ac57-e9ed6cd164d7" name="postOut" operation="post" partnerLink="resource" portType="resource" type="com.tibco.bw.core.design.process.editor.Activity_4002_Reply" variable="postOut-input" width="48" x="308" y="34">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20181120163741PLT&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;&gt;&lt;tns:postResponse&gt;&lt;item&gt;&lt;xsl:value-of select=&quot;&amp;quot;POST RESPONSE&amp;quot;&quot;/&gt;&lt;/item&gt;&lt;/tns:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20181120163741PLT&quot; version=&quot;2.0&quot;&gt;&#10;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;&gt;&#10;        &lt;item&gt;&#10;            &lt;xsl:value-of select=&quot;&amp;quot;POST RESPONSE&amp;quot;&quot;/&gt;&#10;        &lt;/item&gt;&#10;    &lt;/xsl:template&gt;&#10;&lt;/xsl:stylesheet&gt;"/>
+</activity-dir>
+<activity-dir height="48" id="ef3bd541-37a5-4140-888d-4b56f4fd9446" name="Log1" type="bw.generalactivities.log" width="48" x="410" y="34">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;&gt;&lt;tns1:ActivityInput&gt;&lt;message&gt;&lt;xsl:value-of select=&quot;&amp;quot;END of the POST&amp;quot;&quot;/&gt;&lt;/message&gt;&lt;/tns1:ActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;&gt;&lt;tns1:ActivityInput&gt;&lt;message&gt;&lt;xsl:value-of select=&quot;&amp;quot;END of the POST&amp;quot;&quot;/&gt;&lt;/message&gt;&lt;/tns1:ActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.generalactivities.log" version="6.0.0.001">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+<value controlBy="Application" role="Info" suppressJobInfo="true" type="generalactivities:Log"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<activity-dir height="16" id="6f673e98-5a73-4102-a08c-8e6e17cff4f6" name="OnMessageEnd" type="onMessageEnd" width="16" x="538" y="63"/>
+</on-message>
+<on-message height="142" id="6cc2d0fb-c53d-4441-b0e7-7fcabe3ef1fe" input="true" operation="get" output="true" partner-link="resource" portType="resource" type="onMessage" variable="get" width="540" x="9" y="152">
+<activity-dir height="16" id="606ab6ca-bac4-42b4-869d-b5ec1f0c7e97" name="OnMessageStart1" type="onMessageStart" width="16" x="-19" y="63"/>
+<link-dir id="08d9d263-35c5-4a24-93f5-d4297a87fdb5" label="" linkType="SUCCESS" name="getOutToLog" points="[[290,52],[355,52]]" source="c7e5c6a9-1ef2-4caa-8582-28d33f9f7094" target="5a8179d4-79b3-401c-8eb5-477b67db620e"/>
+<activity-dir height="48" id="c7e5c6a9-1ef2-4caa-8582-28d33f9f7094" name="getOut" operation="get" partnerLink="resource" portType="resource" type="com.tibco.bw.core.design.process.editor.Activity_4002_Reply" variable="getOut-input" width="48" x="241" y="28">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20181120163741PLT&quot; xmlns:ns=&quot;http://xmlns.example.com/20181120164213&quot; version=&quot;2.0&quot;&gt;&lt;xsl:param name=&quot;SubProcess&quot;/&gt;&lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;&gt;&lt;tns:getResponse&gt;&lt;item&gt;&lt;xsl:value-of select=&quot;concat($SubProcess/parameters/ns:operationResponse/out,&amp;quot;GET RESPONSE&amp;quot;)&quot;/&gt;&lt;/item&gt;&lt;/tns:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20181120163741PLT&quot; xmlns:ns=&quot;http://xmlns.example.com/20181120164213&quot; version=&quot;2.0&quot;&gt;&#10;    &lt;xsl:param name=&quot;SubProcess.parameters&quot;/&gt;&#10;    &lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;&gt;&#10;        &lt;item&gt;&#10;            &lt;xsl:value-of select=&quot;concat($SubProcess.parameters/out,&amp;quot;GET RESPONSE&amp;quot;)&quot;/&gt;&#10;        &lt;/item&gt;&#10;    &lt;/xsl:template&gt;&#10;&lt;/xsl:stylesheet&gt;"/>
+</activity-dir>
+<link-dir id="1e1fa7c6-905d-4c95-82c5-6105f054aba7" label="" linkType="SUCCESS" name="SubProcessTogetOut" points="[[184,52],[241,52]]" source="abf59f88-652a-4de4-9018-f4db05d394e0" target="c7e5c6a9-1ef2-4caa-8582-28d33f9f7094"/>
+<activity-dir height="48" id="abf59f88-652a-4de4-9018-f4db05d394e0" inputVariable="SubProcess-input" name="SubProcess" outputVariable="SubProcess" partnerLink="SubProcess" portType="Service" type="com.tibco.bw.core.design.process.editor.Activity_4002_Invoke" width="48" x="135" y="28">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://xmlns.example.com/20181120164213&quot; version=&quot;2.0&quot;&gt;&#10;    &lt;xsl:template name=&quot;SubProcess-input&quot; match=&quot;/&quot;&gt;&#10;        &lt;ns:operationRequest&gt;&#10;            &lt;parameters&gt;&#10;                &lt;ns:operationRequest&gt;&#10;                    &lt;in&gt;&#10;                        &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/&gt;&#10;                    &lt;/in&gt;&#10;                &lt;/ns:operationRequest&gt;&#10;            &lt;/parameters&gt;&#10;        &lt;/ns:operationRequest&gt;&#10;    &lt;/xsl:template&gt;&#10;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://xmlns.example.com/20181120164213&quot; version=&quot;2.0&quot;&gt;&#10;    &lt;xsl:template name=&quot;SubProcess-input&quot; match=&quot;/&quot;&gt;&#10;        &lt;ns:operationRequest&gt;&#10;            &lt;in&gt;&#10;                &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/&gt;&#10;            &lt;/in&gt;&#10;        &lt;/ns:operationRequest&gt;&#10;    &lt;/xsl:template&gt;&#10;&lt;/xsl:stylesheet&gt;"/>
+</activity-dir>
+<activity-dir height="48" id="5a8179d4-79b3-401c-8eb5-477b67db620e" name="Log" type="bw.generalactivities.log" width="48" x="355" y="28">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;&gt;&lt;tns1:ActivityInput&gt;&lt;message&gt;&lt;xsl:value-of select=&quot;&amp;quot;END of the GET&amp;quot;&quot;/&gt;&lt;/message&gt;&lt;/tns1:ActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;&gt;&lt;tns1:ActivityInput&gt;&lt;message&gt;&lt;xsl:value-of select=&quot;&amp;quot;END of the GET&amp;quot;&quot;/&gt;&lt;/message&gt;&lt;/tns1:ActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.generalactivities.log" version="6.0.0.001">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+<value controlBy="Application" role="Info" suppressJobInfo="true" type="generalactivities:Log"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<activity-dir height="16" id="92cda1b8-4021-4133-b755-b023f89fb1d9" name="OnMessageEnd1" type="onMessageEnd" width="16" x="538" y="63"/>
+</on-message>
+</pick>
+</process-dir>

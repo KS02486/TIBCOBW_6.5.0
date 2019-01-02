@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_foxqQOy0Eeiu_v3zrPmPbQ" targetNamespace="http://tns.tibco.com/bw/composite/SSLRestService" name="SSLRestService" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_ts6TYOy0Eeiu_v3zrPmPbQ" name="resource" promote="ComponentProcess/resource">
+    <sca:interface.wsdl xmi:id="_ttN1YOy0Eeiu_v3zrPmPbQ" interface="http://xmlns.example.com/20181120163741PLT#wsdl.interface(resource)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ttW_UOy0Eeiu_v3zrPmPbQ" name="RestService" path="/resource" docBasePath="http://localhost:7777/SSLRestService" docResourcePath="Resource" basePath="/" connector="sslrestservice.Resource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/sslrestservice.Process-Resource.json">
+      <operation xmi:id="_ttgwUOy0Eeiu_v3zrPmPbQ" operationName="post" nickname="post-resource" httpMethod="POST" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ttgwUey0Eeiu_v3zrPmPbQ" operationName="get" nickname="get-resource" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_tt9cQOy0Eeiu_v3zrPmPbQ"/>
+      <advancedConfig xmi:id="_ttW_Uey0Eeiu_v3zrPmPbQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_ttgwUuy0Eeiu_v3zrPmPbQ" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_gDJ5IOy0Eeiu_v3zrPmPbQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gDTqIOy0Eeiu_v3zrPmPbQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gDTqIey0Eeiu_v3zrPmPbQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gDTqIuy0Eeiu_v3zrPmPbQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gDc0EOy0Eeiu_v3zrPmPbQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gDc0Eey0Eeiu_v3zrPmPbQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gDc0Euy0Eeiu_v3zrPmPbQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gDmlEOy0Eeiu_v3zrPmPbQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gDmlEey0Eeiu_v3zrPmPbQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qr5xwOy6Eeiu_v3zrPmPbQ" name="host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sXvogOy6Eeiu_v3zrPmPbQ" name="port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_CZmgsOy8Eeiu_v3zrPmPbQ" name="keystore" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_f61DkOy0Eeiu_v3zrPmPbQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_f61Dkey0Eeiu_v3zrPmPbQ" processName="sslrestservice.RestServiceProcess"/>
+    <sca:service xmi:id="_tsnYcOy0Eeiu_v3zrPmPbQ" name="resource">
+      <sca:interface.wsdl xmi:id="_tsxJcOy0Eeiu_v3zrPmPbQ" interface="http://xmlns.example.com/20181120163741PLT#wsdl.interface(resource)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

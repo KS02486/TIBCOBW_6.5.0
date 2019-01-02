@@ -1,0 +1,13 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/sslrestservice.Process-Resource.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/sslrestservice.RestServiceProcess-Resource.json",
+            "type": "generated"
+        }
+    ]
+}
